@@ -269,7 +269,7 @@ int main(void){
 		cout << "You will have to change the grid" << endl;
 		getNumbers();
 	}
-	for(int i=0;i<180;++i){solve();}
+	for(int i=0;i<81*9;++i){solve();}
 	if(!done()){
 		cout << "There is an error..." << endl;
 	}
