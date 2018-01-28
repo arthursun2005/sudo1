@@ -21,13 +21,18 @@ void print(Sudoku s){
 }
 int main(int argc, char const *argv[])
 {
-	Sudoku s1(sudo1);
+	Sudoku s1(sudo2);
 	print(s1);
 	if(!s1.check()){
 		cout << "Error in the Sudoku" << endl;
 		return 0;
 	}
-	if(!s1.done()) s1.solve();
+	int t = s1.solve();
 	print(s1);
+	if(t){
+		cout << "DONE!" << endl;
+	}else{
+		cout << "FAIL!" << endl;
+	}
 	return 0;
 }

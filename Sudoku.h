@@ -66,14 +66,13 @@ int Sudoku::done(){
 	return true;
 }
 int Sudoku::solve(){
-	for(int i=0;i<81;++i){
-		if(cells[i] == 0){
-			for(int n=1;n<=9;++n){
-				cells[i] = n;
-				if(check()){
-					if(solve()){
-						return true;
-					}
+	for(int x=0;x<9;++x){
+		for(int y=0;y<9;++y){
+			if(get(x,y) == 0){
+				for(int n=1;n<=9;++n){
+					change(x,y,n);
+					if(check() && solve()){return true;}
+					change(x,y,0);
 				}
 				return false;
 			}
